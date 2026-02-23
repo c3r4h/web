@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Password Generator - Menghasilkan Palet Warna dari Foto | Cerah.Net</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cerah.Net menyediakan generator password gratis untuk membuat kata sandi yang kuat, aman, dan sulit ditebak. Buat password otomatis dengan kombinasi huruf, angka, dan simbol untuk melindungi akun Anda.">
+    <meta name="keywords" content="password generator, generator password, buat password, kata sandi kuat, password aman, password random, keamanan akun">
+    <meta name="author" content="Cerah.Net">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Tags for Facebook -->
+    <meta property="og:title" content="Password Generator - Buat Password Aman dan Kuat | Cerah.Net">
+    <meta property="og:description"
+        content="Cerah.Net menyediakan generator password gratis untuk membuat kata sandi yang kuat, aman, dan sulit ditebak. Pilih panjang dan kombinasi karakter untuk keamanan maksimal.">
+    <meta property="og:image" content="https://cerah.net/assets/logo.png">
+    <meta property="og:url" content="https://cerah.net/password-generator">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:title" content="Password Generator - Buat Password Aman dan Kuat | Cerah.Net">
+    <meta name="twitter:description"
+        content="Cerah.Net menyediakan generator password gratis untuk membuat kata sandi yang kuat, aman, dan sulit ditebak. Pilih panjang dan kombinasi karakter untuk keamanan maksimal.">
+    <meta name="twitter:image" content="https://cerah.net/assets/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="../assets/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="../assets/android-chrome-512x512.png">
+    <meta name="msapplication-TileImage" content="../assets/mstile-150x150.png">
+    <meta name="msapplication-TileColor" content="#000000">
+
+    <!-- Styles -->
+    <link href="../assets/tailwind.min.css" rel="stylesheet">
+    <link href="../assets/style.css" rel="stylesheet">
+
+    <!-- Script -->
+    <script src="../assets/script.js" defer></script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Cerah.Net | Password Generator Aman dan Gratis",
+        "description": "Cerah.Net menyediakan generator password gratis untuk membuat kata sandi yang kuat, aman, dan sulit ditebak. Pilih panjang dan kombinasi karakter untuk keamanan maksimal.",
+        "url": "https://cerah.net/password-generator",
+        "image": "https://cerah.net/assets/logo.png",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Cerah.Net",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://cerah.net/assets/logo.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://cerah.net/password-generator"
+        }
+    }
+    </script>
+    <link rel="canonical" href="https://cerah.net" />
+</head>
+
+<body>
+    <h1 class="hidden">Cerah.Net</h1>
+    <nav class="bg-gray-50 p-4 shadow-lg">
+        <div class="max-w-7xl lg:px-4 mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="text-2xl font-bold hover:text-blue-800">Cerah.Net</a>
+
+            <!-- Menu items -->
+            <div class="hidden lg:flex space-x-6">
+                <a href="/color-palette-generator" class="hover:text-blue-800">Color Palette Generator</a>
+                <a href="/favicon-generator" class="hover:text-blue-800">Favicon Generator</a>
+                <a href="/image-cropper" class="hover:text-blue-800">Image Cropper</a>
+                <a href="/password-generator" class="text-blue-800 font-bold">Password Generator</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button onclick="toggleMenu()" class="text-gray-800 focus:outline-none">
+                    <svg xmlns="http://w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu items -->
+        <div id="mobile-menu" class="lg:hidden hidden mt-2 w-full">
+            <a href="/color-palette-generator" class="block hover:text-blue-800 py-2">Color Palette Generator</a>
+            <a href="/favicon-generator" class="block hover:text-blue-800 py-2">Favicon Generator</a>
+            <a href="/image-cropper" class="block hover:text-blue-800 py-2">Image Cropper</a>
+            <a href="/password-generator" class="block text-blue-800 font-bold py-2">Password Generator</a>
+        </div>
+    </nav>
+    <div class="max-w-7xl mx-auto p-4 md:p-8 md:py-20 pb-32 mt-5">
+        <div class="lg:flex md:gap-10">
+            <div class="lg:w-1/2 mb-10">
+                <h2 class="text-2xl mb-3">Generator Password</h2>
+                <h2 class="text-4xl mb-7">Cara Super Mudah Membuat Password Aman & Kuat!</h2>
+                
+                <div class="mb-10">
+                    Mau bikin password yang aman tanpa ribet? Tinggal atur panjang password dan pilih
+                    kombinasi karakter yang kamu mau. Klik generate, dan password kuat langsung siap dipakai!
+                </div>
+
+                <form>
+                    <label class="block mb-2 font-semibold">Panjang Karakter</label>
+                    <input type="number" id="lengthInput" min="4" max="50" value="24"
+                        class="mb-4 p-2 border rounded-md w-full hover:border-blue-300">
+
+                    <div class="mb-4 space-y-2 text-xs">
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" id="uppercase" checked>
+                            Huruf Besar (A-Z)
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" id="lowercase" checked>
+                            Huruf Kecil (a-z)
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" id="numbers" checked>
+                            Angka (0-9)
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" id="symbols">
+                            Simbol (!@#$%^&*)
+                        </label>
+                    </div>
+
+                    <button type="button" onclick="generatePassword()"
+                        class="bg-blue-800 hover:bg-opacity-70 text-white p-3 font-bold rounded-md w-full">
+                        Generate Password
+                    </button>
+                </form>
+            </div>
+            <div class="lg:w-1/2 lg:pt-14">
+                <div id="loader"></div>
+                <div id="result-wrapper">
+                    <img loading="lazy" id="imageDefault" src="/password-generator/image.png" 
+                        alt="Password Generator" class="rounded-lg opacity-80" />
+                    <input type="text" id="result"
+                        class="mt-4 p-3 border border-yellow-200 bg-yellow-100 rounded-md w-full text-center font-mono font-bold"
+                        placeholder="Password akan muncul di sini..." readonly>
+                    <button type="button" onclick="copyPassword()"
+                        class="hover:bg-gray-300 p-2 mt-4 rounded-md w-full border border-gray-400 text-sm">
+                        Copy Password
+                    </button>
+                </div>
+                <!-- #result-wrapper -->
+
+                <div class="social border-t pt-3 mt-10 flex justify-end items-center gap-2">
+                    <div class="fb-share-button mb-1" data-href="https://cerah.net" data-layout="button_count">
+                    </div>
+                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0">
+                    </script>
+                
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this awesome page!"
+                        data-url="https://cerah.net">
+                        Tweet
+                    </a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <!-- .social -->
+            </div>
+        </div>
+        <!-- .flex -->
+
+        <div class="about bg-gray-100 bg-opacity-40 mt-14 border border-gray-200 p-6 rounded-lg mb-10">
+            <div class="text-sm text-gray-500">
+                <b>Cerah.Net</b> adalah platform online yang menyediakan alat seperti 
+                <b>Color Pallete Generator, Favicon Generator, Image Cropper, dan Password Generator</b> untuk membantu pengguna membuat konten digital dengan aman dan efisien. 
+                <b>Password Generator</b> memungkinkan Anda membuat kata sandi yang kuat, acak, dan sulit ditebak untuk melindungi akun online Anda.
+            </div>
+        </div>
+        <!-- about -->
+    </div>
+    <!-- .wrapper -->
+
+    <footer class="bg-gray-50 border-t border-gray-200 text-center text-xs text-gray-500 p-6 fixed bottom-0 w-full">
+        <p>© 2025 Made with Love by Cerah.Net</p>
+    </footer>
+
+    <script>
+    function generatePassword() {
+        const loader = document.getElementById("loader");
+        const resultWrapper = document.getElementById("result-wrapper");
+
+        loader.style.display = "block";
+        resultWrapper.style.display = "none";
+
+        setTimeout(() => {
+            const length = document.getElementById("lengthInput").value;
+            const hasUpper = document.getElementById("uppercase").checked;
+            const hasLower = document.getElementById("lowercase").checked;
+            const hasNumber = document.getElementById("numbers").checked;
+            const hasSymbol = document.getElementById("symbols").checked;
+
+            const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const lower = "abcdefghijklmnopqrstuvwxyz";
+            const number = "0123456789";
+            const symbol = "!@#$%^&*()_+";
+
+            let allChars = "";
+            if (hasUpper) allChars += upper;
+            if (hasLower) allChars += lower;
+            if (hasNumber) allChars += number;
+            if (hasSymbol) allChars += symbol;
+
+            if (allChars === "") {
+                alert("Pilih minimal satu tipe karakter!");
+                loader.style.display = "none";
+                resultWrapper.style.display = "block";
+                return;
+            }
+
+            let password = "";
+            for (let i = 0; i < length; i++) {
+                password += allChars.charAt(Math.floor(Math.random() * allChars.length));
+            }
+
+            document.getElementById("result").value = password;
+
+            loader.style.display = "none";
+            resultWrapper.style.display = "block";
+
+        }, 300);
+    }
+
+    function copyPassword() {
+        const result = document.getElementById("result");
+        result.select();
+        document.execCommand("copy");
+        alert("Password berhasil disalin!");
+    }
+
+    generatePassword();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://googletagmanager.com/gtag/js?id=G-X7WWQ4LVM9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-X7WWQ4LVM9');
+    </script>
+</body>
+
+</html>
